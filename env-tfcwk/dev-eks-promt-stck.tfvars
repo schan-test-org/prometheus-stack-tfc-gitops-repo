@@ -25,7 +25,7 @@ eks_cluster_name       = "devtest-eks"
 ########################################
 # external_labels = ""
 external_labels = <<EOT
-cluster: mz-dev-eks
+cluster: devtest-eks
 EOT
 
 helm_release_name = "prometheus-release"
