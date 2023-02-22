@@ -79,8 +79,6 @@ grafana:
   forceDeployDatasources: false
   forceDeployDashboards: false
   defaultDashboardsEnabled: true
-  deploymentStrategy:
-    type: Recreate
 
   ## Timezone for the default dashboards
   ## Other options are: browser or a specific timezone, i.e. Europe/Luxembourg
