@@ -18,14 +18,14 @@ tfc_wk = "dev-eks-tfc"
 ########################################
 # etc setting
 ########################################
-eks_cluster_name       = "devtest-eks"
+eks_cluster_name       = "test-deveks"
 
 ########################################
 # helm
 ########################################
 # external_labels = ""
 external_labels = <<EOT
-cluster: devtest-eks
+cluster: test-deveks
 EOT
 
 helm_release_name = "prometheus-release"
@@ -150,10 +150,13 @@ alertmanager_volume_size    = "10Gi"
 #   memory: "100Mi"
 # EOF
 
+
+#################################
 # node_selector = ""
 # # node_selector = <<EOF
 # # role: ops
 # # EOF
+
 #################################
 
 affinity = <<EOF
@@ -173,6 +176,7 @@ tolerations = <<EOF
   value: "ops"
   effect: "NoSchedule"
 EOF
+#################################
 
 additional_prometheus_rules = ""
 
