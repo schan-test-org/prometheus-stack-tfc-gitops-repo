@@ -159,6 +159,17 @@ alertmanager_volume_size    = "10Gi"
 
 #################################
 
+# affinity = <<EOF
+# nodeAffinity:
+#   requiredDuringSchedulingIgnoredDuringExecution:
+#     nodeSelectorTerms:
+#     - matchExpressions:
+#       - key: role
+#         operator: In
+#         values:
+#         - ops
+# EOF
+
 affinity = <<EOF
 nodeAffinity:
   requiredDuringSchedulingIgnoredDuringExecution:
@@ -168,6 +179,12 @@ nodeAffinity:
         operator: In
         values:
         - ops
+    - matchExpressions:
+      - key: topology.ebs.csi.aws.com/zone
+        operator: In
+        values:
+        - ap-northeast-2a
+        - ap-northeast-2c
 EOF
 
 tolerations = <<EOF
