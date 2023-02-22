@@ -22,9 +22,9 @@ resource "kubernetes_storage_class" "gp3" {
   storage_provisioner = "ebs.csi.aws.com"
   volume_binding_mode = "WaitForFirstConsumer"
   reclaim_policy = "Delete"
-  parameters {
+  parameters = {
     type = "gp3"
-  }
+  } 
   allowed_topologies {
     match_label_expressions {
       key = "topology.ebs.csi.aws.com/zone"
