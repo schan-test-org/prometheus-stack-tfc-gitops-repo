@@ -31,7 +31,8 @@ EOT
 helm_release_name = "prometheus-release"
 helm_chart_name   = "kube-prometheus-stack"
 # helm_chart_version = "35.4.2"
-helm_chart_version  = "43.2.1"
+helm_chart_version  = "44.4.1"
+# helm_chart_version  = "43.2.1"
 helm_repository_url = "https://prometheus-community.github.io/helm-charts"
 
 create_namespace = true
