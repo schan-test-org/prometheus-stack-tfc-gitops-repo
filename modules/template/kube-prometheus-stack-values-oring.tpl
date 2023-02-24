@@ -12,6 +12,9 @@ defaultRules:
   create: true
 
   labels:
+  #  tenant: mzc
+  #  project: heimdall
+  #  env: prod
     region: ap-northeast-2
   
   disabled: {}
@@ -51,7 +54,7 @@ alertmanager:
     storage:
       volumeClaimTemplate:
         spec:
-          storageClassName: "aws-efs-prmt"
+          storageClassName: "gp3"
           accessModes: ["ReadWriteOnce"]
           resources:
             requests:
@@ -110,7 +113,7 @@ grafana:
   persistence:
     enabled: true
     type: pvc
-    storageClassName: "aws-efs-prmt"
+    storageClassName: "gp3"
     accessModes:
     - ReadWriteOnce
     size: ${grafana_volume_size}
@@ -269,7 +272,7 @@ prometheus:
     storageSpec:
       volumeClaimTemplate:
         spec:
-          storageClassName: "aws-efs-prmt"
+          storageClassName: gp3
           accessModes: ["ReadWriteOnce"]
           resources:
             requests:
