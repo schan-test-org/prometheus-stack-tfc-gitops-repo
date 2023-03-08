@@ -12,6 +12,9 @@ defaultRules:
   create: true
 
   labels:
+  #  tenant: mzc
+  #  project: heimdall
+  #  env: prod
     region: ap-northeast-2
   
   disabled: {}
@@ -110,7 +113,7 @@ grafana:
   persistence:
     enabled: true
     type: pvc
-    storageClassName: "gp3"
+    storageClassName: "aws-efs-prmt"
     accessModes:
     - ReadWriteOnce
     size: ${grafana_volume_size}
